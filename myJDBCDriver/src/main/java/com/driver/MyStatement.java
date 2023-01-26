@@ -61,7 +61,7 @@ public class MyStatement implements Statement {
 
     @Override
     public void close() throws SQLException {
-
+        System.out.println("Statement closed successfully");
     }
 
     @Override

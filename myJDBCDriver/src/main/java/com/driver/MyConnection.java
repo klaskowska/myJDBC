@@ -8,9 +8,11 @@ import java.util.concurrent.Executor;
 
 public class MyConnection implements Connection {
     private Socket socket;
+    private boolean isClosed;
 
     public MyConnection(Socket socket) {
         this.socket = socket;
+        this.isClosed = false;
     }
     @Override
     public Statement createStatement() {
@@ -54,12 +56,13 @@ public class MyConnection implements Connection {
 
     @Override
     public void close() throws SQLException {
-
+        System.out.println("Connection closed successfully");
+        isClosed = true;
     }
 
     @Override
     public boolean isClosed() throws SQLException {
-        return false;
+        return isClosed;
     }
 
     @Override

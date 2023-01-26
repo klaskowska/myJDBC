@@ -34,7 +34,7 @@ public class MyResultSet implements ResultSet {
 
     @Override
     public void close() throws SQLException {
-
+        System.out.println("ResultSet closed successfully");
     }
 
     @Override
