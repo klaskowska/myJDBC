@@ -15,7 +15,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>JDBC</groupId>
+            <artifactId>myJDBCDriver</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

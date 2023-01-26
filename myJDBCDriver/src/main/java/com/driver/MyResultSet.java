@@ -1,14 +1,11 @@
 package com.driver;
 
-
 import java.io.InputStream;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.*;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Map;
 
 public class MyResultSet implements ResultSet {
@@ -27,7 +24,7 @@ public class MyResultSet implements ResultSet {
         else
             records = null;
 
-        if (separatedRecords.length > 0)
+        if (separatedRecords.length > 0 && !separatedRecords[0].equals(""))
             currentRecord = separatedRecords[0].split(",");
         else
             return false;

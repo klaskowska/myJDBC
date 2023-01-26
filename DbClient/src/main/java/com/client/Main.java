@@ -26,10 +26,8 @@ public class Main {
             while (resultSet.next()) {
                 String selectedTitle = resultSet.getString(1);
                 String selectedAuthor = resultSet.getString(2);
-                if (!selectedTitle.equals("")) {
-                    System.out.println("Title: " + selectedTitle);
-                    System.out.println("Author: " + selectedAuthor);
-                }
+                System.out.println("Title: " + selectedTitle);
+                System.out.println("Author: " + selectedAuthor);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,7 +48,7 @@ public class Main {
 //        insertBook("ddd", "eee");
 
 //        selectBookByTitle("aaa");
-        selectBookByAuthor("bbb");
+//        selectBookByAuthor("bbb");
 //        selectBookByAuthor("eee");
     }
 }

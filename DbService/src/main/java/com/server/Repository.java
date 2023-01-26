@@ -46,7 +46,7 @@ public class Repository {
             return IncorrectRequestBodyError;
         Book book = books.get(title);
         if (book == null)
-            return null;
+            return "\n";
         return book.getTitle() + ", " + book.getAuthor() + "\n";
     }
 
@@ -55,16 +55,17 @@ public class Repository {
             return IncorrectRequestBodyError;
 
         StringBuilder selectedBooks = new StringBuilder();
-        for(Entry<String, Book> entry : books.entrySet()) {
+        for (Entry<String, Book> entry : books.entrySet()) {
             if (entry.getValue().getAuthor().equals(author)) {
                 selectedBooks
                         .append(entry.getValue().getTitle())
-                        .append(", ").append(entry.getValue().getAuthor())
+                        .append(", ")
+                        .append(entry.getValue().getAuthor())
                         .append("\n");
             }
         }
         if (selectedBooks.toString().equals(""))
-            return null;
+            return "\n";
         return selectedBooks.toString();
     }
 

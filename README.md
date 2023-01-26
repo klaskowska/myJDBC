@@ -27,3 +27,28 @@ Runs DbService on port 5433.
 
 ## DbClient
 An example of using myJDBCDriver with DbService.
+
+# Running
+Install `DbService` and `myJDBCDriver` libraries in your local maven repository:
+```
+cd DbService
+mvn install
+cd ..
+cd myJDBCDriver
+mvn install
+cd ..
+```
+Run database:
+```
+cd DbRunner
+mvn package
+java -cp target/DbRunner-1.0-SNAPSHOT.jar com.runner.Main
+cd ..
+```
+Run client:
+```
+cd DbClient
+mvn package
+java -cp target/DbClient-1.0-SNAPSHOT.jar com.client.Main
+cd ..
+```
